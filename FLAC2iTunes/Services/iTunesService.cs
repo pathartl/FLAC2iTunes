@@ -27,6 +27,7 @@ namespace FLAC2iTunes
 
             foreach (var track in Tracks)
             {
+                Console.WriteLine("Hydrating {0}", ((dynamic)track).Location);
                 tracks.Add(new Track(track));
             }
 
