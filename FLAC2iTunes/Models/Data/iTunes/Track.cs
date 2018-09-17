@@ -69,7 +69,7 @@ namespace FLAC2iTunes.Models.Data.iTunes
 
         public Track(dynamic track)
         {
-            Album = track.Album;
+            /*Album = track.Album;
             AlbumArtist = track.AlbumArtist;
             AlbumRating = track.AlbumRating;
             AlbumRatingKind = track.AlbumRatingKind;
@@ -77,9 +77,9 @@ namespace FLAC2iTunes.Models.Data.iTunes
             BitRate = track.BitRate;
             BookmarkTime = track.BookmarkTime;
             BPM = track.BPM;
-            Category = track.Category;
+            Category = track.Category;*/
             Comment = track.Comment;
-            Compilation = track.Compilation;
+            /*Compilation = track.Compilation;
             DateAdded = track.DateAdded;
             Description = track.Description;
             DiscCount = track.DiscCount;
@@ -92,9 +92,9 @@ namespace FLAC2iTunes.Models.Data.iTunes
             Genre = track.Genre;
             Index = track.Index;
             Kind = track.Kind;
-            KindAsString = track.KindAsString;
+            KindAsString = track.KindAsString;*/
             Location = track.Location;
-            LongDescription = track.LongDescription;
+            /*LongDescription = track.LongDescription;
             Lyrics = track.Lyrics;
             ModificationDate = track.ModificationDate;
             Name = track.Name;
@@ -125,7 +125,7 @@ namespace FLAC2iTunes.Models.Data.iTunes
             TrackNumber = track.TrackNumber;
             Unplayed = track.Unplayed;
             VolumeAdjustment = track.VolumeAdjustment;
-            Year = track.Year;
+            Year = track.Year;*/
         }
     }
 }
