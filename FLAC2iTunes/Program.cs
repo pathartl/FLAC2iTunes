@@ -19,7 +19,7 @@ namespace FLAC2iTunes
             var ConversionService = new ConversionService();
 
             ConversionService.Init();
-            //ConversionService.ProcessUnsupportedMusic();
+            ConversionService.ProcessUnsupportedMusic();
             ConversionService.ProcessSupportedMusic();
 
             Console.WriteLine("Done!");
