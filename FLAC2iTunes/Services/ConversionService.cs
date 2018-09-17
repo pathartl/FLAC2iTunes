@@ -82,6 +82,12 @@ namespace FLAC2iTunes
 
             converter.Convert();
 
+            var file = TagLib.File.Create(converter.OutputPath);
+            file.Tag.Comment = fingerprint.ToString();
+            file.Save();
+            file.Dispose();
+            
+
             return converter.OutputPath;
         }
 
