@@ -129,7 +129,6 @@ namespace FLAC2iTunes
             Task.WaitAll(workers);
 
             Console.WriteLine("Done processing unsupporteds");
-            Console.ReadLine();
         }
 
         private void ProcessSupportedFile(int workerId)
@@ -190,7 +189,6 @@ namespace FLAC2iTunes
             Task.WaitAll(workers);
 
             Console.WriteLine("Done processing unsupporteds");
-            Console.ReadLine();
         }
 
         public void ProcessUnsupportedFile(int workerId)
