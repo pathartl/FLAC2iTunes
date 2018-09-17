@@ -52,7 +52,12 @@ namespace FLAC2iTunes
             file.Read(data, 0, length);
             file.Close();
 
-            return Crc32Algorithm.Compute(data).ToString();
+            return Crc32CAlgorithm.Compute(data).ToString();
+        }
+
+        public static string GetFileSize(string path)
+        {
+            return new FileInfo(path).Length.ToString();
         }
     }
 }
