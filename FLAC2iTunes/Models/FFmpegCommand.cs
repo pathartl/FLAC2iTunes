@@ -28,7 +28,7 @@ namespace FLAC2iTunes.Models
         public void Convert()
         {
             Process.StartInfo.Arguments = String.Format(
-                "-y -i \"{0}\" -acodec {1} -metadata comment=\"{2}\" -vcodec copy \"{3}\"",
+                "-y -i \"{0}\" -acodec {1} -metadata comment=\"{2}\" -vcodec copy -sample_fmt s16p -ar 44100 -ac 2 \"{3}\"",
                 InputPath.Replace("\\", "/"),
                 Codec,
                 Hash,
