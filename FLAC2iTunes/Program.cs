@@ -16,11 +16,24 @@ namespace FLAC2iTunes
     {
         static void Main(string[] args)
         {
+            var stopwatch = new Stopwatch();
+
+            stopwatch.Start();
+
             var ConversionService = new ConversionService();
 
+            ConversionService.Threads = 0;
+
+            try
+            {
+                ConversionService.Threads = Convert.ToInt32(ConfigurationManager.AppSettings["Threads"]);
+            }
+            catch { }
+
             ConversionService.Init();
-            ConversionService.ProcessUnsupportedMusic();
-            ConversionService.ProcessSupportedMusic();
+            ConversionService.ScanForChanges();
+
+            stopwatch.Stop();
 
             Console.WriteLine("Done!");
         }

@@ -42,8 +42,10 @@ namespace FLAC2iTunes.Models
             //Process.ErrorDataReceived += (sender, args) => sb.AppendLine(args.Data);
 
             // direct start
-            Process.StartInfo.UseShellExecute = false;
+            //Process.StartInfo.UseShellExecute = false;
             Process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            Process.StartInfo.RedirectStandardOutput = false;
+            Process.StartInfo.RedirectStandardError = false;
 
             Process.Start();
             // start our event pumps

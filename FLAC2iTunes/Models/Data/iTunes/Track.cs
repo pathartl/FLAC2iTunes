@@ -66,8 +66,20 @@ namespace FLAC2iTunes.Models.Data.iTunes
         public bool Unplayed { get; set; }
         public int VolumeAdjustment { get; set; }
         public int Year { get; set; }
+        public IITFileOrCDTrack iTunesTrack { get; set; }
+        public TrackFingerprint Fingerprint { get; set; }
 
-        public Track(dynamic track)
+        public void Delete()
+        {
+            iTunesTrack.Delete();
+        }
+
+        public void UpdateInfoFromFile()
+        {
+            iTunesTrack.UpdateInfoFromFile();
+        }
+
+        public Track(IITFileOrCDTrack track)
         {
             /*Album = track.Album;
             AlbumArtist = track.AlbumArtist;
@@ -126,6 +138,13 @@ namespace FLAC2iTunes.Models.Data.iTunes
             Unplayed = track.Unplayed;
             VolumeAdjustment = track.VolumeAdjustment;
             Year = track.Year;*/
+            iTunesTrack = track;
+
+            try
+            {
+                Fingerprint = new TrackFingerprint(Comment);
+            }
+            catch { }
         }
     }
 }

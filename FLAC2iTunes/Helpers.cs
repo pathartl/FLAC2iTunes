@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -45,11 +46,12 @@ namespace FLAC2iTunes
 
         public static string GetFileCRC32(string path)
         {
+            // Read by 512 bytes
+            // No idea if this is accurate for detecting changes in files
             var file = new FileStream(path, FileMode.Open);
-            var length = (int)file.Length;
-            var data = new byte[length];
+            var data = new byte[512];
 
-            file.Read(data, 0, length);
+            file.Read(data, 0, 512);
             file.Close();
 
             return Crc32CAlgorithm.Compute(data).ToString();
